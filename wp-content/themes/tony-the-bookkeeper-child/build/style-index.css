@@ -20,6 +20,7 @@ body {
     color: var(--primary-color);
     font-family: var(--secondary-font);
     background: linear-gradient(to bottom, #007788, #0099aa);
+    overflow-x: hidden;
 }
 
 .content-wrapper {
@@ -166,34 +167,34 @@ h3 {
     padding: 50px 20px;
     text-align: center;
     height: 90vh;
-    /* background-size: cover;  Remove this */
-    /* background-position: center; Remove this */
-    /* background-repeat: no-repeat; Remove this */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Changed to column */
     justify-content: center;
     align-items: center;
-    position: relative; 
+    position: relative;
+    overflow: hidden;
 }
 
-.hero .page-banner__bg-image {
+.hero > .page-banner__bg-image {
     height: 60vh;
     width: 50vw;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* margin: 0 auto;  Remove this */
     display: block;
-    position: relative; /* Add this */
-    left: 50%;         /* Add this */
-    transform: translateX(-50%); /* Add this */
+    position: relative;
+    top: 0;
+    left: 0;
+    /* transform: translateX(-50%); Removed this */
+    z-index: 1; /* Changed to 1 */
+    min-height: 60vh;
 }
-
 
 .hero .hero-content {
     max-width: 800px;
     margin: 0 auto;
-    z-index: 10;
+    z-index: 2; /* Changed to 2 */
+    position: relative; /* Added this */
 }
 
 .hero h1 {
