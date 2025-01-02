@@ -1,0 +1,327 @@
+:root {
+    --primary-color: #002F55; /* Navy Blue */
+    --secondary-color: #F2F2F2; /* Light Gray */
+    --accent-color-1: #008C8C; /* Teal */
+    --accent-color-2: #D4AF37; /* Gold */
+    --primary-font: 'Playfair Display', serif;
+    --secondary-font: 'Open Sans', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: var(--secondary-font);
+    background: linear-gradient(to bottom, #002F55, #004477);
+}
+
+/* General Styles */
+
+.content-wrapper {
+    flex: 1;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--primary-font);
+}
+a {
+    color: var(--accent-color-1);
+}
+
+button {
+    background-color: var(--accent-color-2);
+}
+
+p {
+    line-height: 1.6;
+}
+
+h2 {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+
+
+
+
+/* Button Styles */
+.btn { 
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600; /* Slightly bolder font weight */
+    transition: background-color 0.3s ease; /* Add a transition effect */
+}
+
+.btn--blue { /* Style for blue buttons */
+    background-color: var(--accent-color-1); /* Teal background */
+    color: var(--secondary-color); /* Light gray text color */
+}
+
+.btn--blue:hover {
+    background-color: var(--primary-color); /* Navy blue on hover */
+}
+
+/* Header and Nav Sections */
+.site-header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure the container spans the full width */
+}
+
+.site-title {
+    font-size: 2em;
+    margin: 0;
+    line-height: 1em; /* Adjust this value to fine-tune the spacing */
+}
+
+.site-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.first-name {
+    /* display: block; Removed this line */
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.last-name {
+    display: block; /* Make the last name a block element */
+    font-size: 1em;
+    font-weight: 400;
+    font-style: italic;
+    margin-left: 20px; /* Add an indent to the last name */
+}
+
+.site-navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+.site-navigation li {
+    margin-left: 20px;
+    display: inline-block !important;
+}
+
+.site-navigation a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+/* Header and Nav sections end */
+
+/* Hero Section Styles */
+.hero {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero .btn-primary {
+    background-color: var(--accent-color-2);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero .btn-primary:hover {
+    background-color: var(--accent-color-1);
+}
+/*Hero Section End. */
+
+/* Services Section */
+.services {
+    background-color: var(--secondary-color); /* Use the secondary color */
+    padding: 80px 20px;
+  }
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+  
+.service-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+  
+.service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .service-item p {
+    margin: 0 0 10px;
+}
+.service-item a {
+    display: inline-block; /* Make the link an inline-block element */
+    margin-top: 20px; /* Add some space above the link */
+    font-size: 0.9em; /* Slightly smaller font size for the link */
+  }
+
+  .service-item .btn {
+    display: inline-block;
+    background-color: var(--accent-color-1);
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .footer-col {
+    flex: 1 0 30%; /* Distribute columns evenly */
+    margin: 1rem;
+    min-width: 200px; 
+  }
+
+.footer-col h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-col p, .footer-col a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 1rem;
+    /* flex-direction: row; */
+}
+
+.footer-nav li {
+    list-style:none;
+    
+}
+
+.footer-nav a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    color: var(--accent-color-2);
+}
+
+.footer-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+.footer-nav li {
+    margin-left: 20px;
+    display: inline-block !important;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons li {
+    list-style: none;
+}
+
+.social-icons a {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.page-banner {
+    position: relative;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 50px 0;
+}
+
+.page-banner__bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
