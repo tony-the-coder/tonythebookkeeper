@@ -168,7 +168,7 @@ h3 {
     text-align: center;
     height: 90vh;
     display: flex;
-    flex-direction: column; /* Changed to column */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     position: relative;
@@ -182,19 +182,21 @@ h3 {
     background-position: center;
     background-repeat: no-repeat;
     display: block;
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
-    /* transform: translateX(-50%); Removed this */
-    z-index: 1; /* Changed to 1 */
+    z-index: 0; /* Image behind the content */
     min-height: 60vh;
 }
 
 .hero .hero-content {
     max-width: 800px;
     margin: 0 auto;
-    z-index: 2; /* Changed to 2 */
-    position: relative; /* Added this */
+    z-index: 1; /* Content above the image */
+    position: relative; 
+    top: 30%; /* Adjust this value to position the content */
+    left: 50%;
+    transform: translate(-50%, -50%); 
 }
 
 .hero h1 {
