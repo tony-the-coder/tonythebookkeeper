@@ -1,13 +1,14 @@
 :root {
-    --primary-color: #002F55; /* Navy Blue */
-    --secondary-color: #F2F2F2; /* Light Gray */
-    --accent-color-1: #008C8C; /* Teal */
-    --accent-color-2: #D4AF37; /* Gold */
-    --primary-font: 'Playfair Display', serif;
-    --secondary-font: 'Open Sans', sans-serif;
+    --primary-color: #007788;
+    --secondary-color: #F8F8F8;
+    --accent-color-1: #FFD700;
+    --accent-color-2: #DC3545;
+    --primary-font: 'Bebas Neue Variable', sans-serif;
+    --secondary-font: 'Source Sans 3 Variable', sans-serif;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     display: flex;
@@ -18,30 +19,49 @@ body {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     font-family: var(--secondary-font);
-    background: linear-gradient(to bottom, #002F55, #004477);
+    background: linear-gradient(to bottom, #007788, #0099aa);
 }
-
-/* General Styles */
 
 .content-wrapper {
     flex: 1;
 }
 
 .container {
-    max-width: 90%;
+    max-width: 95%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
-h1, h2, h3 {
+h1,
+h2 {
     font-family: var(--primary-font);
 }
+
+@supports (font-variation-settings: normal) {
+
+    h1,
+    h2 {
+        font-variation-settings: 'wght' 700;
+    }
+
+    h3 {
+        font-family: var(--primary-font);
+        font-variation-settings: 'wght' 600;
+    }
+
+    body,
+    p {
+        font-variation-settings: 'wght' 400, 'opsz' 16;
+    }
+}
+
 a {
     color: var(--accent-color-1);
 }
 
 button {
     background-color: var(--accent-color-2);
+    color: white;
 }
 
 p {
@@ -55,53 +75,52 @@ h2 {
 
 h3 {
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
-
-
-
-
-/* Button Styles */
-.btn { 
+.btn {
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: 600; /* Slightly bolder font weight */
-    transition: background-color 0.3s ease; /* Add a transition effect */
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
-.btn--blue { /* Style for blue buttons */
-    background-color: var(--accent-color-1); /* Teal background */
-    color: var(--secondary-color); /* Light gray text color */
+.btn--blue {
+    background-color: var(--primary-color);
+    color: white;
 }
 
 .btn--blue:hover {
-    background-color: var(--primary-color); /* Navy blue on hover */
+    background-color: var(--accent-color-2);
+    color: white;
 }
 
-/* Header and Nav Sections */
 .site-header {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 10;
+    padding: 30px 0;
+   
 }
 
 .site-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Ensure the container spans the full width */
+    width: 100%;
 }
 
 .site-title {
     font-size: 2em;
     margin: 0;
-    line-height: 1em; /* Adjust this value to fine-tune the spacing */
+    line-height: 1em;
 }
 
 .site-title a {
@@ -109,18 +128,15 @@ h3 {
     color: inherit;
 }
 
-.first-name {
-    /* display: block; Removed this line */
+.site-title .first-name {
     font-size: 1.2em;
     font-weight: 700;
 }
 
-.last-name {
-    display: block; /* Make the last name a block element */
+.site-title .last-name {
     font-size: 1em;
     font-weight: 400;
     font-style: italic;
-    margin-left: 20px; /* Add an indent to the last name */
 }
 
 .site-navigation ul {
@@ -138,32 +154,67 @@ h3 {
 
 .site-navigation a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 600;
+    font-size: 1.1em; /* Adjust font size */
+    line-height: 1.4; /* Adjust line height */
 }
-/* Header and Nav sections end */
 
-/* Hero Section Styles */
 .hero {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: 50px 20px;
     text-align: center;
+    height: 90vh;
+    /* background-size: cover;  Remove this */
+    /* background-position: center; Remove this */
+    /* background-repeat: no-repeat; Remove this */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
 }
+
+.hero .page-banner__bg-image {
+    height: 60vh;
+    width: 50vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* margin: 0 auto;  Remove this */
+    display: block;
+    position: relative; /* Add this */
+    left: 50%;         /* Add this */
+    transform: translateX(-50%); /* Add this */
+}
+
 
 .hero .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    z-index: 10;
 }
 
 .hero h1 {
-    font-size: 2.5em;
+    font-size: 3em;
+    color: var(--secondary-color);
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 2em;
+    color: var(--accent-color-1);
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
     font-size: 1.2em;
     margin-bottom: 30px;
+    color: var(--secondary-color);
 }
 
 .hero .btn-primary {
@@ -177,20 +228,27 @@ h3 {
 .hero .btn-primary:hover {
     background-color: var(--accent-color-1);
 }
-/*Hero Section End. */
 
-/* Services Section */
+.usp {
+    background-color: var(--secondary-color);
+}
+
+.usp h2,
+.usp p {
+    color: var(--primary-color);
+}
+
 .services {
-    background-color: var(--secondary-color); /* Use the secondary color */
+    background-color: var(--primary-color);
     padding: 80px 20px;
-  }
+}
 
 .services-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
-  
+
 .service-item {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -198,33 +256,35 @@ h3 {
     padding: 20px;
     flex: 1 1 calc(33.333% - 20px);
     box-sizing: border-box;
+    text-align: center;
 }
-  
+
 .service-item h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-  }
-  
-  .service-item p {
+    color: var(--primary-color);
+}
+
+.service-item p {
     margin: 0 0 10px;
 }
-.service-item a {
-    display: inline-block; /* Make the link an inline-block element */
-    margin-top: 20px; /* Add some space above the link */
-    font-size: 0.9em; /* Slightly smaller font size for the link */
-  }
 
-  .service-item .btn {
+.service-item a {
     display: inline-block;
-    background-color: var(--accent-color-1);
-    color: var(--secondary-color);
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.service-item .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 1rem;
 }
 
-/* Footer Styles */
 .site-footer {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -244,20 +304,21 @@ h3 {
     justify-content: space-between;
     width: 100%;
     flex-wrap: wrap;
-  }
-  
-  .footer-col {
-    flex: 1 0 30%; /* Distribute columns evenly */
+}
+
+.footer-col {
+    flex: 1 0 30%;
     margin: 1rem;
-    min-width: 200px; 
-  }
+    min-width: 200px;
+}
 
 .footer-col h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
 
-.footer-col p, .footer-col a {
+.footer-col p,
+.footer-col a {
     color: var(--secondary-color);
     text-decoration: none;
 }
@@ -265,12 +326,10 @@ h3 {
 .footer-nav {
     display: flex;
     gap: 1rem;
-    /* flex-direction: row; */
 }
 
 .footer-nav li {
-    list-style:none;
-    
+    list-style: none;
 }
 
 .footer-nav a {
@@ -279,7 +338,7 @@ h3 {
 }
 
 .footer-nav a:hover {
-    color: var(--accent-color-2);
+    color: var(--accent-color-1);
 }
 
 .footer-nav ul {
@@ -324,4 +383,176 @@ h3 {
     height: 100%;
     background-size: cover;
     background-position: center;
+}
+
+main {
+    padding: 0;
+}
+
+/* .usp,
+.services,
+.testimonials {
+    margin-bottom: 2rem;
+} */
+
+.usp h2,
+.services h2,
+.testimonials h2 {
+    font-family: var(--primary-font);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.usp p,
+.services p,
+.testimonials p {
+    font-family: var(--secondary-font);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.services h3 {
+    font-family: var(--primary-font);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.services .services-grid {
+    display: flex;
+    gap: 2rem;
+}
+
+.services .service-item {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.services .service-item i {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: var(--accent-color-1);
+}
+
+.services .service-item p {
+    margin: 0;
+}
+
+.services .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.testimonials .testimonial-item {
+    border: 1px solid #ddd;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+.testimonials .testimonial-item blockquote {
+    font-family: var(--primary-font);
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonials .testimonial-item .testimonial-author {
+    font-family: var(--secondary-font);
+    font-weight: 600;
+}
+
+/* W3Schools Slideshow Styles */
+.mySlides {
+    display: none;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* Add padding to sections */
+section {
+    padding: 30px 0;
+    margin: 0;
 }
